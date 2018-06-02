@@ -4,17 +4,20 @@
     $connection = getConnection();
 
     if($connection && $_POST) {
-        // $query = "INSERT INTO produtos (nome, preco, quant) VALUES ('". $_POST['nome'] ."', '". $_POST['preco'] ."', '". $_POST['quant'] ."')";
-        // $query = "INSERT INTO produtos (nome, preco, quant) VALUES ('{$_POST['nome']}', '{$_POST['preco']}', '{$_POST['quant']}')";
-        //print_r($query);
-        // if(mysqli_query($connection, $query)) {
-        //     header("Location: lista.php");
-        // }
-        if(addProduct($connection, $_POST['nome'], $_POST['preco'], $_POST['quant'])) {
+        $added = addProduct($connection, $_POST['nome'], $_POST['preco'], $_POST['quant'], $_POST['id_categoria']);
+        // var_dump($_POST);
+
+        // die();
+        if($added) {
             header("Location: lista.php?action=add&message=success");
         } else {
             header("Location: cadastro.php?action=add&message=failed");
         }
+    }
+    
+    if($connection) {
+        $categories = getCategories($connection);
+        // var_dump(mysqli_fetch_assoc($categories));
     }
 ?>
 
@@ -51,7 +54,15 @@
                     <input type="text" name="preco" class="form-control" id="preco" placeholder="Preço">
                 </div>
             </div>
-               
+
+            <?php while($categ = mysqli_fetch_assoc($categories)): ?>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="id_categoria" id="categ_<?=$categ['id']?>" value="<?=$categ['id']?>">
+                <label class="form-check-label" for="categ_<?=$categ['id']?>">
+                    <?= $categ['nome'] ?>
+                </label>
+                </div>
+            <?php endwhile; ?>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
     </div>

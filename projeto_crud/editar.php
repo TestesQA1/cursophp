@@ -33,7 +33,7 @@
     <div class="container">
         <?php include_once("inc/alerts.php");?>
         <form action="editar.php" method="POST">
-          <input type="text" name="id" value="<?=$prod['id']?>">
+          <input type="hidden" name="id" value="<?=$prod['id']?>">
           <br>
 
             <div class="form-row">
@@ -55,7 +55,7 @@
                     <input type="text" name="preco" class="form-control" id="preco" placeholder="Preço" value="<?=$prod['preco']?>">
                 </div>
             </div>
-               
+            <br>
             <button type="submit" class="btn btn-primary">Atualizar</button>
         </form>
     </div>

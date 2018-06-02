@@ -30,6 +30,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Quantidade</th>
         <th scope="col">Preco</th>
+        <th scope="col">Categoria</th>
         <th scope="col">Ações</th>
       </tr>
     </thead>
@@ -37,9 +38,10 @@
       <?php while($prod = mysqli_fetch_assoc($result)): ?>
       <tr>
         <th scope="row"><?=$prod["id"]?></th>
-        <td><?= $prod["nome"]?></td>
+        <td><?= $prod["nomeProduto"]?></td>
         <td><?=$prod["quant"]?></td>
         <td><?=$prod["preco"]?></td>
+        <td><?=$prod["nomeCategoria"]?></td>
         <td>
           <!-- <a href="editar.php">Editar</a> | -->
           <form action="editar.php" method="GET">
