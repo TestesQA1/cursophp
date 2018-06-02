@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header, footer{
+    background: gold;
+    min-height: 50px;
+}
+
+main{
+    background: cyan;
+    min-height: 200px;
+}

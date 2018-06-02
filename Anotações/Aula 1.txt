@@ -1,0 +1,71 @@
+Login: php7528
+Password: php7528
+Wifi: caelum57
+caelum3bf4
+
+1. CLIENT SIDE (Front-end)
+    HTML
+    CSS
+    Java Script
+
+
+2. SERVER SIDE
+
+    2.1 - Web Server
+    Apache
+    Tomcat
+    IIS
+    NGINX
+
+    2.2 - Back-end (Linguagens de programação)
+    PHP
+    JAVA
+    NODE
+    RUBY
+    PYTHON
+
+    2.3 - Banco de dados
+    2.3.1 SQL
+        MYSQL
+        Oracle
+        SQL Server
+        Postgree
+
+    2.3.2 NO SQL
+        Mongo DB
+        Cassandra
+
+
+3. Iniciando o PHP
+    php -S localhost:{porta}
+    exemplo: php -S localhost:1234
+    *Se estiver na pasta raiz, basta colocar -t + nome da pasta do projeto
+
+    criar uma arquivo index.html ou index.php
+    criar código base: ! + tab
+    criar o arquivo favicon.ico
+
+
+4. Opções para imprimir
+
+    <p>Nome: <?php echo($nome) ?> </p>
+    <p>Idade: <?php print($idade) ?> </p>
+    <p>Magro: <?=$magro?> </p>
+
+5. var_dump() debuga a variável
+    exemplo: var_dump($_GET);
+
+6. Configurando o MYSQL
+    6.1 mysql -u root -p (inicia o mysql)
+    6.2 SHOW DATABASES; (exibe todos os databases)
+    6.3 USE nomedatabase; (entra no database)
+    6.4 SHOW TABLES; (exibe as tabelas do database conectado)
+    6.5 CREATE DATABASE nomedodatabase; (cria um database)
+    6.6 DROP DATABASE nomedodatabase; (apaga um database)
+    6.7 CREATE TABLE nomedatabela(
+            id INTEGER AUTO_INCREMENT PRIMARY KEY ,
+            nome VARCHAR( 255 ) ,
+            preco DECIMAL( 10, 2 )
+        ); (cria uma tabela e colunas no database)
+    6.8 DROP TABLE nomedatabela (apaga uma tabela)
+    6.9 ALTER TABLE nometabela ADD 'nomecoluna' INT NULL DEFAULT NULL AFTER nometabela
