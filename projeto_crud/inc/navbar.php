@@ -15,3 +15,8 @@
     </ul>
   </div>
 </nav>
+<div class="container">
+  <br>
+  <p>Bem Vindo, <?=$_SESSION['USER_LOGGED_NAME'];?>
+  </p>
+</div>
