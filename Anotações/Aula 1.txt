@@ -69,3 +69,7 @@ caelum3bf4
         ); (cria uma tabela e colunas no database)
     6.8 DROP TABLE nomedatabela (apaga uma tabela)
     6.9 ALTER TABLE nometabela ADD 'nomecoluna' INT NULL DEFAULT NULL AFTER nometabela
+    6.10 mysqli_fetch_array, mysqli_fetch_assoc ou mysqli_fetch_object.
+
+7. Orientação a objeto
+    7.1 $query
