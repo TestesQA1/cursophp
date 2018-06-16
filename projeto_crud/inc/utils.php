@@ -1,4 +1,5 @@
 <?php
+include_once("classes/Product.php");
 
 function navActive($pg, $key) {
   if($pg == $key) { 
@@ -20,11 +21,13 @@ function getProductById($conn, $id) {
 }
 
 function getProducts($conn) {
+  $products = [];
   $query = "SELECT
               p.id,
               p.nome AS nome_produto,
               p.preco,
               p.quant,
+              c.id AS id_categoria,
               c.nome AS nome_categoria
             FROM
               produtos AS p
@@ -35,7 +38,20 @@ function getProducts($conn) {
             ORDER BY
               p.id
             ASC";
-  return mysqli_query($conn, $query);
+  $result = mysqli_query($conn, $query);
+
+  while($prod = mysqli_fetch_assoc($result) ) {
+    $produto = new Product();
+    $produto->id = $prod['id'];
+    $produto->nome = $prod['nome_produto'];
+    $produto->preco = $prod['preco'];
+    $produto->quant = $prod['quant'];
+    $produto->idCategoria = $prod['id_categoria'];
+    $produto->nomeCategoria = $prod['nome_categoria'];
+    array_push($products, $produto);
+  }
+  
+  return $products;
 }
 
 function getProduct($result) {
