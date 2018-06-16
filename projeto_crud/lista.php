@@ -39,7 +39,7 @@ if($conn = getConn()) {
             <td><?= $produto->nome ?></td>
             <td><?= $produto->quant ?></td>
             <td><?= $produto->preco ?></td>
-            <td><?= $produto->nomeCategoria ?></td>
+            <td><?= $produto->categoria->nome ?></td>
             <td>
 
               <form action="editar.php" method="GET">

@@ -11,7 +11,9 @@ if($conn && $_POST) {
   $product->nome = $_POST['nome'];
   $product->preco = $_POST['preco'];
   $product->quant = $_POST['quant'];
-  $product->idCategoria = $_POST['id_categoria'];
+
+  $product->categoria = new Categoria();
+  $product->categoria->id = $_POST['id_categoria']; 
 
   $added = addProduct($conn, $product);
 
