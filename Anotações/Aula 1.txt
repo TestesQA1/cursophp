@@ -74,4 +74,4 @@ caelum3bf4
          SELECT id, nome, email FROM usuarios WHERE senha = md5('$senha')
 
 7. Orientação a objeto
-    7.1 $query
+    7.1 Um objeto possui propriedade (atributo, característica) e método (ação)
