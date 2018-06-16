@@ -27,8 +27,10 @@ if($conn = getConn()) {
             <th scope="col">#</th>
             <th scope="col">Produto</th>
             <th scope="col">Quantidade</th>
-            <th scope="col">Preço</th>
+            <th scope="col">Preço Unit</th>
+            <th scope="col">Total</th>
             <th scope="col">Categoria</th>
+            <th scope="col">Sit Estoque</th>
             <th scope="col">Ações</th>
           </tr>
         </thead>
@@ -38,8 +40,10 @@ if($conn = getConn()) {
             <th scope="row"><?= $produto->id ?></th>
             <td><?= $produto->nome ?></td>
             <td><?= $produto->quant ?></td>
-            <td><?= $produto->preco ?></td>
+            <td><?= $produto->formataMoeda($produto->preco) ?></td>
+            <td><?=$produto->total() ?></td>
             <td><?= $produto->categoria->nome ?></td>
+            <td><?=$produto->situacaoEsqoque() ?></td>
             <td>
 
               <form action="editar.php" method="GET">
